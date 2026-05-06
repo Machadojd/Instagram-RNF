@@ -816,20 +816,125 @@ Procesamiento distribuido
 Discusión de Trade-offs
 </h2>
 
-<p>
-Incrementar la disponibilidad del sistema mejora la experiencia del usuario, pero implica mayores costos de infraestructura, replicación regional y mantenimiento operativo.
-</p>
+<div class="vs-grid">
+
+<div class="vs-card">
+
+<h3>
+<i class="fa-solid fa-server"></i>
+Disponibilidad
+</h3>
+
+<div class="vs-content">
+
+<div class="vs-side positive">
+
+<h4>Beneficio</h4>
 
 <p>
-Aumentar la calidad gráfica de filtros de realidad aumentada mejora la interacción visual, aunque incrementa el consumo energético y el uso de GPU en dispositivos móviles.
+Alta disponibilidad y mejor experiencia de usuario durante millones de solicitudes concurrentes.
 </p>
 
-<p>
-La personalización avanzada del feed mejora la relevancia del contenido, pero requiere mayor procesamiento distribuido y consumo de recursos computacionales.
-</p>
+</div>
+
+<div class="vs-center">
+VS
+</div>
+
+<div class="vs-side negative">
+
+<h4>Consecuencia</h4>
 
 <p>
-Estos trade-offs obligan a los arquitectos de software a equilibrar rendimiento, costos, seguridad y experiencia de usuario dentro de sistemas distribuidos de gran escala.
+Mayor costo de infraestructura, replicación regional y complejidad operativa.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="vs-card">
+
+<h3>
+<i class="fa-solid fa-camera"></i>
+Filtros de cámara
+</h3>
+
+<div class="vs-content">
+
+<div class="vs-side positive">
+
+<h4>Beneficio</h4>
+
+<p>
+Mayor calidad visual e interacción inmersiva mediante realidad aumentada.
+</p>
+
+</div>
+
+<div class="vs-center">
+VS
+</div>
+
+<div class="vs-side negative">
+
+<h4>Consecuencia</h4>
+
+<p>
+Incremento del consumo de GPU, batería y procesamiento del dispositivo móvil.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="vs-card">
+
+<h3>
+<i class="fa-solid fa-brain"></i>
+Feed personalizado
+</h3>
+
+<div class="vs-content">
+
+<div class="vs-side positive">
+
+<h4>Beneficio</h4>
+
+<p>
+Contenido más relevante y personalizado utilizando algoritmos de Machine Learning.
+</p>
+
+</div>
+
+<div class="vs-center">
+VS
+</div>
+
+<div class="vs-side negative">
+
+<h4>Consecuencia</h4>
+
+<p>
+Mayor procesamiento distribuido, uso de memoria y consumo de recursos computacionales.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<p class="tradeoff-conclusion">
+
+Estos trade-offs obligan a los arquitectos de software a equilibrar rendimiento, disponibilidad, seguridad, experiencia de usuario y costos operativos dentro de arquitecturas distribuidas de gran escala.
+
 </p>
 
 </section>
