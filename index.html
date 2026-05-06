@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram RNF</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h1><i class="fa-brands fa-instagram"></i> Instagram RNF</h1>
+
+    <a href="#intro"><i class="fa-solid fa-circle-info"></i> Introducción</a>
+    <a href="#historias"><i class="fa-solid fa-camera"></i> Historias</a>
+    <a href="#filtros"><i class="fa-solid fa-wand-magic-sparkles"></i> Filtros</a>
+    <a href="#feed"><i class="fa-solid fa-chart-line"></i> Feed</a>
+    <a href="#conclusion"><i class="fa-solid fa-circle-check"></i> Conclusión</a>
+</div>
+
+<div class="content">
+
+<section class="hero">
+    <div>
+        <div class="hero-icon">
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+
+        <h2>Caracterización de Requisitos No Funcionales</h2>
+
+        <p>
+            Aplicación seleccionada: Instagram
+        </p>
+
+        <div class="hero-tags">
+            <span><i class="fa-solid fa-shield"></i> Seguridad</span>
+            <span><i class="fa-solid fa-bolt"></i> Rendimiento</span>
+            <span><i class="fa-solid fa-server"></i> Disponibilidad</span>
+        </div>
+    </div>
+</section>
+
+<section id="intro" class="card">
+<h2><i class="fa-solid fa-circle-info"></i> Introducción</h2>
+
+<p>
+Los requisitos no funcionales (RNF) definen atributos de calidad que permiten que una aplicación funcione correctamente más allá de sus funcionalidades visibles.
+En plataformas masivas como Instagram, estos requisitos impactan directamente la experiencia del usuario, la arquitectura del sistema y la infraestructura tecnológica.
+</p>
+</section>
+
+<section id="historias">
+<h2 class="section-title">
+<i class="fa-solid fa-camera"></i> Historias
+</h2>
+
+<div class="grid">
+
+<div class="metric-card">
+<i class="fa-solid fa-server metric-icon"></i>
+<h4>Disponibilidad</h4>
+<span>99.9%</span>
+<p>Fiabilidad del servicio de historias.</p>
+</div>
+
+<div class="metric-card">
+<i class="fa-solid fa-bolt metric-icon"></i>
+<h4>Publicación</h4>
+<span>< 5s</span>
+<p>Tiempo máximo de carga.</p>
+</div>
+
+<div class="metric-card">
+<i class="fa-solid fa-cloud metric-icon"></i>
+<h4>CDN</h4>
+<span>Global</span>
+<p>Distribución rápida de contenido.</p>
+</div>
+
+</div>
+
+<div class="card">
+<h3>RNF 1: Fiabilidad – Disponibilidad</h3>
+
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-server"></i> Infraestructura distribuida</span>
+<span class="badge"><i class="fa-solid fa-network-wired"></i> Balanceo de carga</span>
+<span class="badge"><i class="fa-solid fa-copy"></i> Replicación</span>
+</div>
+
+<p>
+Mayor disponibilidad requiere más servidores redundantes y mayor costo.
+</p>
+</div>
+
+</section>
+
+<section id="filtros">
+<h2 class="section-title">
+<i class="fa-solid fa-wand-magic-sparkles"></i> Filtros de cámara
+</h2>
+
+<div class="grid">
+
+<div class="metric-card">
+<i class="fa-solid fa-gauge-high metric-icon"></i>
+<h4>Latencia</h4>
+<span>< 100ms</span>
+<p>Respuesta en tiempo real.</p>
+</div>
+
+<div class="metric-card">
+<i class="fa-solid fa-shield-halved metric-icon"></i>
+<h4>Seguridad</h4>
+<span>0 fugas</span>
+<p>Protección de datos biométricos.</p>
+</div>
+
+<div class="metric-card">
+<i class="fa-solid fa-microchip metric-icon"></i>
+<h4>GPU</h4>
+<span>Hardware</span>
+<p>Renderizado acelerado.</p>
+</div>
+
+</div>
+</section>
+
+<section id="feed">
+<h2 class="section-title">
+<i class="fa-solid fa-chart-line"></i> Feed personalizado
+</h2>
+
+<div class="grid">
+
+<div class="metric-card">
+<i class="fa-solid fa-server metric-icon"></i>
+<h4>Disponibilidad</h4>
+<span>99.95%</span>
+<p>Alta disponibilidad global.</p>
+</div>
+
+<div class="metric-card">
+<i class="fa-solid fa-clock metric-icon"></i>
+<h4>Respuesta</h4>
+<span>< 2s</span>
+<p>Entrega rápida del feed.</p>
+</div>
+
+<div class="metric-card">
+<i class="fa-solid fa-brain metric-icon"></i>
+<h4>Machine Learning</h4>
+<span>IA</span>
+<p>Personalización inteligente.</p>
+</div>
+
+</div>
+
+<div class="card">
+<h3>Arquitectura utilizada</h3>
+
+<div class="architecture">
+<div class="arch-box">Usuarios</div>
+<div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+<div class="arch-box">API Gateway</div>
+<div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+<div class="arch-box">Microservicios</div>
+<div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+<div class="arch-box">Machine Learning</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="conclusion" class="card">
+<h2><i class="fa-solid fa-circle-check"></i> Conclusión</h2>
+
+<p>
+El éxito de Instagram depende de funcionalidades rápidas, seguras, disponibles y escalables soportadas por arquitecturas distribuidas.
+</p>
+</section>
+
+</div>
+</body>
+</html>
