@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram RNF Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h1><i class="fa-brands fa-instagram"></i> Instagram RNF</h1>
+
+    <a href="#intro"><i class="fa-solid fa-circle-info"></i> Introducción</a>
+    <a href="#historias"><i class="fa-solid fa-camera"></i> Historias</a>
+    <a href="#filtros"><i class="fa-solid fa-wand-magic-sparkles"></i> Filtros</a>
+    <a href="#feed"><i class="fa-solid fa-chart-line"></i> Feed</a>
+    <a href="#conclusion"><i class="fa-solid fa-circle-check"></i> Conclusión</a>
+</div>
+
+<div class="content">
+
+<section class="hero">
+<div>
+<div class="hero-icon">
+<i class="fa-brands fa-instagram"></i>
+</div>
+
+<h2>Caracterización de Requisitos No Funcionales</h2>
+
+<p>Aplicación seleccionada: Instagram</p>
+
+<div class="hero-tags">
+<span><i class="fa-solid fa-shield-halved"></i> Seguridad</span>
+<span><i class="fa-solid fa-bolt"></i> Rendimiento</span>
+<span><i class="fa-solid fa-server"></i> Disponibilidad</span>
+<span><i class="fa-solid fa-brain"></i> Escalabilidad</span>
+</div>
+</div>
+</section>
+
+<section id="intro" class="card">
+<h2><i class="fa-solid fa-circle-info"></i> Introducción</h2>
+
+<p>
+Los requisitos no funcionales (RNF) definen atributos de calidad que permiten que una aplicación funcione correctamente más allá de sus funcionalidades visibles.
+</p>
+
+<p>
+En plataformas masivas como Instagram, estos requisitos impactan directamente la experiencia del usuario, la arquitectura del sistema y la infraestructura tecnológica.
+</p>
+
+<div class="mini-grid">
+<div class="mini-card">
+<i class="fa-solid fa-users"></i>
+<h4>Usuarios</h4>
+<p>Millones de usuarios concurrentes.</p>
+</div>
+
+<div class="mini-card">
+<i class="fa-solid fa-cloud"></i>
+<h4>Infraestructura</h4>
+<p>Sistemas distribuidos globalmente.</p>
+</div>
+
+<div class="mini-card">
+<i class="fa-solid fa-lock"></i>
+<h4>Seguridad</h4>
+<p>Protección constante de información.</p>
+</div>
+</div>
+</section>
+
+<section id="historias">
+
+<h2 class="section-title">
+<i class="fa-solid fa-camera"></i>
+1. Historias
+</h2>
+
+<div class="card">
+<h3>Definición</h3>
+
+<p>
+Las historias son publicaciones temporales de fotos o videos que desaparecen después de 24 horas.
+</p>
+
+<p>
+El usuario puede grabarlas o cargarlas desde la aplicación, añadir texto, música, stickers, encuestas y compartirlas con sus seguidores.
+</p>
+</div>
+
+<div class="grid">
+
+<div class="metric-card">
+<i class="fa-solid fa-server metric-icon"></i>
+<h4>Disponibilidad</h4>
+<span>99.9%</span>
+<p>Fiabilidad del servicio de historias.</p>
+</div>
+
+<div class="metric-card">
+<i class="fa-solid fa-bolt metric-icon"></i>
+<h4>Publicación</h4>
+<span>< 5s</span>
+<p>Tiempo máximo de publicación.</p>
+</div>
+
+<div class="metric-card">
+<i class="fa-solid fa-cloud metric-icon"></i>
+<h4>CDN</h4>
+<span>Global</span>
+<p>Distribución rápida de contenido.</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>RNF 1: Fiabilidad – Disponibilidad</h3>
+
+<h4>Importancia</h4>
+
+<p>
+Las historias deben estar disponibles permanentemente para quienes las publican y para quienes desean visualizarlas.
+</p>
+
+<h4>Escenario arquitectónico</h4>
+
+<ul>
+<li><strong>Fuente:</strong> Usuario de Instagram</li>
+<li><strong>Estímulo:</strong> Intenta ver una historia</li>
+<li><strong>Artefacto:</strong> Servicio de historias + almacenamiento multimedia</li>
+<li><strong>Entorno:</strong> Hora pico con alta concurrencia</li>
+<li><strong>Respuesta:</strong> El sistema carga la historia correctamente</li>
+<li><strong>Medida:</strong> Disponibilidad ≥ 99.9% mensual</li>
+</ul>
+
+<h4>Trade-off</h4>
+
+<p>
+Mayor disponibilidad requiere más servidores redundantes y mayor costo.
+</p>
+
+<h4>Implicaciones arquitectónicas</h4>
+
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-network-wired"></i> Infraestructura distribuida</span>
+<span class="badge"><i class="fa-solid fa-scale-balanced"></i> Balanceo de carga</span>
+<span class="badge"><i class="fa-solid fa-copy"></i> Replicación de contenido</span>
+</div>
+
+<h4>Tácticas</h4>
+
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-server"></i> Redundancia activa</span>
+<span class="badge"><i class="fa-solid fa-rotate"></i> Failover automático</span>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>RNF 2: Rendimiento – Comportamiento temporal</h3>
+
+<h4>Importancia</h4>
+
+<p>
+La historia debe quedar visible rápidamente al publicarse.
+</p>
+
+<h4>Escenario</h4>
+
+<ul>
+<li><strong>Fuente:</strong> Usuario</li>
+<li><strong>Estímulo:</strong> Publica una historia</li>
+<li><strong>Artefacto:</strong> Servicio de carga multimedia</li>
+<li><strong>Entorno:</strong> Operación normal</li>
+<li><strong>Respuesta:</strong> Historia publicada</li>
+<li><strong>Medida:</strong> Tiempo total menor a 5 segundos</li>
+</ul>
+
+<h4>Trade-off</h4>
+
+<p>
+Mayor velocidad puede reducir calidad del archivo.
+</p>
+
+<h4>Implicaciones</h4>
+
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-code-branch"></i> Procesamiento paralelo</span>
+<span class="badge"><i class="fa-solid fa-cloud"></i> CDN</span>
+<span class="badge"><i class="fa-solid fa-database"></i> Caché</span>
+</div>
+
+<h4>Tácticas</h4>
+
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-list"></i> Cola asíncrona</span>
+<span class="badge"><i class="fa-solid fa-earth-americas"></i> CDN cercana al usuario</span>
+</div>
+
+</div>
+
+</section>
+
+<section id="filtros">
+
+<h2 class="section-title">
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+2. Filtros de cámara
+</h2>
+
+<div class="card">
+
+<h3>Definición</h3>
+
+<p>
+Son efectos visuales de realidad aumentada aplicados en tiempo real sobre la imagen capturada por la cámara.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="metric-card">
+<i class="fa-solid fa-gauge-high metric-icon"></i>
+<h4>Latencia</h4>
+<span>< 100ms</span>
+<p>Respuesta en tiempo real.</p>
+</div>
+
+<div class="metric-card">
+<i class="fa-solid fa-shield-halved metric-icon"></i>
+<h4>Seguridad</h4>
+<span>0 fugas</span>
+<p>Protección biométrica.</p>
+</div>
+
+<div class="metric-card">
+<i class="fa-solid fa-microchip metric-icon"></i>
+<h4>GPU</h4>
+<span>Hardware</span>
+<p>Procesamiento acelerado.</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>RNF 1: Rendimiento</h3>
+
+<h4>Importancia</h4>
+
+<p>
+El filtro debe reaccionar inmediatamente a los movimientos del usuario.
+</p>
+
+<h4>Escenario</h4>
+
+<ul>
+<li><strong>Fuente:</strong> Usuario</li>
+<li><strong>Estímulo:</strong> Cambia filtro</li>
+<li><strong>Artefacto:</strong> Motor gráfico / cámara</li>
+<li><strong>Entorno:</strong> Dispositivo gama media</li>
+<li><strong>Respuesta:</strong> Filtro aplicado en tiempo real</li>
+<li><strong>Medida:</strong> Latencia menor a 100 ms</li>
+</ul>
+
+<h4>Trade-off</h4>
+
+<p>
+Mayor calidad gráfica aumenta consumo de batería.
+</p>
+
+<h4>Implicaciones</h4>
+
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-microchip"></i> Uso de GPU</span>
+<span class="badge"><i class="fa-solid fa-computer"></i> Procesamiento local</span>
+</div>
+
+<h4>Tácticas</h4>
+
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-video"></i> Renderizado por hardware</span>
+<span class="badge"><i class="fa-solid fa-download"></i> Precarga de filtros</span>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>RNF 2: Seguridad – Confidencialidad</h3>
+
+<h4>Importancia</h4>
+
+<p>
+Los datos faciales pueden considerarse biométricos y deben protegerse.
+</p>
+
+<h4>Escenario</h4>
+
+<ul>
+<li><strong>Fuente:</strong> Usuario</li>
+<li><strong>Estímulo:</strong> Activa filtro facial</li>
+<li><strong>Artefacto:</strong> Datos capturados por cámara</li>
+<li><strong>Entorno:</strong> Sesión normal</li>
+<li><strong>Respuesta:</strong> Datos protegidos</li>
+<li><strong>Medida:</strong> 0 fugas / cifrado habilitado</li>
+</ul>
+
+<h4>Trade-off</h4>
+
+<p>
+Mayor seguridad puede aumentar consumo de recursos.
+</p>
+
+<h4>Implicaciones</h4>
+
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-lock"></i> Cifrado</span>
+<span class="badge"><i class="fa-solid fa-file-shield"></i> Políticas de privacidad</span>
+</div>
+
+<h4>Tácticas</h4>
+
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-shield"></i> Cifrado en tránsito y reposo</span>
+<span class="badge"><i class="fa-solid fa-laptop"></i> Procesamiento local</span>
+</div>
+
+</div>
+
+</section>
+
+<section id="feed">
+
+<h2 class="section-title">
+<i class="fa-solid fa-chart-line"></i>
+3. Feed personalizado
+</h2>
+
+<div class="card">
+
+<h3>Definición</h3>
+
+<p>
+Pantalla principal donde el contenido es ordenado por algoritmos según gustos e interacciones previas.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="metric-card">
+<i class="fa-solid fa-server metric-icon"></i>
+<h4>Disponibilidad</h4>
+<span>99.95%</span>
+<p>Alta disponibilidad global.</p>
+</div>
+
+<div class="metric-card">
+<i class="fa-solid fa-clock metric-icon"></i>
+<h4>Respuesta</h4>
+<span>< 2s</span>
+<p>Entrega rápida del feed.</p>
+</div>
+
+<div class="metric-card">
+<i class="fa-solid fa-brain metric-icon"></i>
+<h4>Machine Learning</h4>
+<span>IA</span>
+<p>Personalización inteligente.</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>RNF 1: Fiabilidad – Disponibilidad</h3>
+
+<h4>Importancia</h4>
+
+<p>
+Si el feed falla, el usuario prácticamente no puede usar la aplicación.
+</p>
+
+<h4>Escenario</h4>
+
+<ul>
+<li><strong>Fuente:</strong> Usuario</li>
+<li><strong>Estímulo:</strong> Abre la aplicación</li>
+<li><strong>Artefacto:</strong> Servicio feed</li>
+<li><strong>Entorno:</strong> Alta demanda global</li>
+<li><strong>Respuesta:</strong> Feed cargado correctamente</li>
+<li><strong>Medida:</strong> Disponibilidad ≥ 99.95%</li>
+</ul>
+
+<h4>Trade-off</h4>
+
+<p>
+Mayor disponibilidad implica más complejidad y costo.
+</p>
+
+<h4>Implicaciones</h4>
+
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-cubes"></i> Microservicios resilientes</span>
+<span class="badge"><i class="fa-solid fa-globe"></i> Replicación regional</span>
+</div>
+
+<h4>Tácticas</h4>
+
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-arrow-up-right-dots"></i> Autoescalado horizontal</span>
+<span class="badge"><i class="fa-solid fa-power-off"></i> Circuit breaker</span>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>RNF 2: Rendimiento – Capacidad</h3>
+
+<h4>Importancia</h4>
+
+<p>
+Debe generar millones de feeds personalizados simultáneamente.
+</p>
+
+<h4>Escenario</h4>
+
+<ul>
+<li><strong>Fuente:</strong> Millones de usuarios</li>
+<li><strong>Estímulo:</strong> Solicitan feed al mismo tiempo</li>
+<li><strong>Artefacto:</strong> Motor de recomendación</li>
+<li><strong>Entorno:</strong> Hora pico</li>
+<li><strong>Respuesta:</strong> Feed entregado sin lentitud</li>
+<li><strong>Medida:</strong> Menor a 2 segundos</li>
+</ul>
+
+<h4>Trade-off</h4>
+
+<p>
+Mayor personalización consume más procesamiento y datos.
+</p>
+
+<h4>Implicaciones</h4>
+
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-server"></i> Sistemas distribuidos</span>
+<span class="badge"><i class="fa-solid fa-database"></i> Bases escalables</span>
+<span class="badge"><i class="fa-solid fa-brain"></i> Machine Learning</span>
+</div>
+
+<h4>Tácticas</h4>
+
+<div class="badge-row">
+<span class="badge"><i class="fa-solid fa-memory"></i> Caché de recomendaciones</span>
+<span class="badge"><i class="fa-solid fa-diagram-project"></i> Procesamiento distribuido</span>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Arquitectura utilizada</h3>
+
+<div class="architecture">
+
+<div class="arch-box">Usuarios</div>
+<div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+<div class="arch-box">API Gateway</div>
+<div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+<div class="arch-box">Microservicios</div>
+<div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+<div class="arch-box">Machine Learning</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="conclusion" class="card">
+
+<h2><i class="fa-solid fa-circle-check"></i> Conclusión</h2>
+
+<p>
+El éxito de Instagram depende de que sus funcionalidades sean rápidas, seguras, disponibles y escalables.
+</p>
+
+<p>
+Los requisitos no funcionales permiten soportar millones de usuarios simultáneamente mediante arquitecturas distribuidas, sistemas escalables y mecanismos avanzados de rendimiento y seguridad.
+</p>
+
+</section>
+
+</div>
+</body>
+</html>
